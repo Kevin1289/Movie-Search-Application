@@ -1,0 +1,10 @@
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY load_data.py /app/
+COPY movies_metadata.csv /app/
+
+RUN pip install requests
+
+CMD ["python", "load_data.py"]
